@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'sinatra'
-require 'wilksformula'
+require './wilksformula'
 require 'json'
 require 'logger'
 
