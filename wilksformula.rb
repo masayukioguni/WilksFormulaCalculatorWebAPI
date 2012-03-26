@@ -1,6 +1,7 @@
 
 class WilksFormula
-	 def initialize
+	 def initialize()
+	 	@type = 0
 		@men_wilks_array = [
 			1.3354, 1.3311,1.3268,1.3225,1.3182,1.314,1.3098,1.3057,1.3016,1.2975,
 			1.2934,1.2894,1.2854,1.2814,1.2775,1.2736,1.2697,1.2658,1.262,1.2582,
@@ -281,6 +282,30 @@ class WilksFormula
 			0.7707,0.7706,0.7705,0.7705,0.7704,0.7703,0.7703,0.7702,0.7702,0.7701,
 			0.7700,0.7700,0.7699,0.7699,0.7698,0.7698,0.7697,0.7696,0.7696,0.7695,
 			0.7695,0.7694,0.7694,0.7693,0.7693,0.7692,0.7692,0.7691,0.7691,0.7691]
+	end
+
+	def set_type(type)
+		@type = type
+	end
+
+	def get_factor(weight) 
+		factor = 0 
+		if @type == 1
+			factor = get_men_factor(weight)
+		else
+			factor = get_women_factor(weight)
+		end
+		return factor
+	end
+
+	def get_formula(weight,total) 
+		formula = 0 
+		if @type == 1
+			formula = get_men_formula(weight,total)
+		else
+			formula = get_women_formula(weight,total)
+		end
+		return formula
 	end
 
 	def get_index(weight) 
