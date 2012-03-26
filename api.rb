@@ -45,6 +45,12 @@ def get_wilksformula_object(type,params)
   end
   return item
 end
+# Quick test
+get '/' do
+  "Congradulations!
+   You're running a Sinatra application on Heroku!"
+end
+
 
 get '/wilksformula/female' do
   content_type :json
